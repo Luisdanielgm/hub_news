@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-@app.route('/scrape', methods=['GET'])
+@app.route('/genbeta', methods=['GET'])
 def scrape_website():
     # Tu código de scraping
     url = "https://www.genbeta.com/tag/inteligencia-artificial"
@@ -26,5 +26,5 @@ def scrape_website():
 
 if __name__ == '__main__':
     # Puedes cambiar el puerto aquí
-    puerto = 8080
-    app.run(debug=True, port=puerto)
+    # puerto = 8080
+    app.run(debug=True)
