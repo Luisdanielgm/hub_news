@@ -2,15 +2,15 @@ import requests
 from bs4 import BeautifulSoup
 from utils.utils import convert_to_hours_ago, extract_image_urls
 
-def scrape_genbeta():
+def scrape_gizmodo():
     # Tu código de scraping
-    url = "https://www.genbeta.com/tag/inteligencia-artificial"
+    url = "https://es.gizmodo.com/tecnologia"
     response = requests.get(url)
     content = response.content
     soup = BeautifulSoup(content, 'html.parser')
     
     # Busca todos los elementos <article> con la clase 'recent-abstract abstract-article'
-    articles = soup.find_all('article', class_='recent-abstract abstract-article')
+    articles = soup.find_all('article', class_='sc-cw4lnv-0 ksZQxB js_post_item')
 
     # Lista para almacenar los resultados
     scraped_data = []
@@ -23,13 +23,13 @@ def scrape_genbeta():
         img_urls = extract_image_urls(img_tag)
         
         # Extrae el título del artículo del elemento <h2> con la clase 'abstract-title'
-        title = article.find('h2', class_='abstract-title').find('a').get_text()
+        title = article.find('h2', class_='sc-759qgu-0 cDAvZo sc-cw4lnv-6 exTKuS').get_text()
 
         # Extrae la URL del enlace dentro de la etiqueta <a> en el div con la clase 'abstract-excerpt'
-        link_url = article.find('div', class_='abstract-excerpt').find('a')['href']
+        link_url = article.find('a', class_='sc-1out364-0 dPMosf js_link')['href']
 
         # Extrae el contenido del artículo del elemento <div> con la clase 'abstract-excerpt'
-        contenido = article.find('div', class_='abstract-excerpt').find('p').get_text()
+        contenido = article.find('p', class_='sc-77igqf-0 fnnahv').get_text()
 
         # Encuentra la etiqueta <time> con el atributo datetime
         time_tag = article.find('time', {'datetime': True})
@@ -47,7 +47,7 @@ def scrape_genbeta():
             'content': contenido,
             'date': date,
             'date_origen': date_origen,
-            'fuente': 'Genbeta'
+            'fuente': 'Gizmodo'
         }
         scraped_data.append(article_info)
 

@@ -1,12 +1,25 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Función para convertir una fecha en "Hace X horas"
-def convert_to_hours_ago(date):
-    # Fecha actual
-    fecha_actual = datetime.utcnow()
+def convert_to_hours_ago(date_str):
+    # Fecha actual en UTC con información de zona horaria
+    fecha_actual = datetime.utcnow().replace(tzinfo=timezone.utc)
 
-    # Convierte la fecha proporcionada en formato ISO 8601 a datetime
-    fecha_proporcionada = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
+    # Formatos a probar
+    formats = ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%SZ']
+
+    # Intentar parsear la fecha con los formatos dados
+    for fmt in formats:
+        try:
+            fecha_proporcionada = datetime.strptime(date_str, fmt)
+            # Si el formato no tiene información de zona horaria, asumir UTC
+            if fecha_proporcionada.tzinfo is None:
+                fecha_proporcionada = fecha_proporcionada.replace(tzinfo=timezone.utc)
+            break
+        except ValueError:
+            continue
+    else:
+        raise ValueError("Formato de fecha no reconocido")
 
     # Calcula la diferencia de tiempo
     diferencia = fecha_actual - fecha_proporcionada
@@ -37,6 +50,7 @@ def convert_to_hours_ago(date):
             resultado += f" y {horas_restantes} horas"
 
     return resultado
+
 
     
 
