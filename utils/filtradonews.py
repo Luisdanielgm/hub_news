@@ -11,7 +11,7 @@ def get_db():
         print("Error al conectar a la base de datos:", e)
         raise
 
-def filtrar_unfiltrated_items(collection_name, limit=100):
+def filtrar_unfiltrated_items(collection_name, limit=400):
     try:
         db = get_db()
         collection = db[collection_name]
@@ -30,7 +30,14 @@ def filtrar_unfiltrated_items(collection_name, limit=100):
                 print(f"Resultado: {unfiltrated_content}")
 
                 # Actualizar el elemento con la traducción y marcarlo como traducido
-                collection.update_one({'_id': item['_id']}, {'$set': {'filtrada': unfiltrated_content}})
+                positive_responses = ['si', 'sí', 'yes']
+
+                # Convertir el contenido a minúsculas para la comparación
+                if unfiltrated_content.lower() in positive_responses:
+                    collection.update_one({'_id': item['_id']}, {'$set': {'filtrada': 'si'}})
+                else:
+                    collection.update_one({'_id': item['_id']}, {'$set': {'filtrada': 'no'}})
+
                 print(f"Filtro completado para: {item['_id']}")
             except Exception as e:
                 print(f"Error al Filtrar o actualizar el elemento {item['_id']}: {e}")

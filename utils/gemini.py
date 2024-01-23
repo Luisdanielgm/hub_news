@@ -28,7 +28,6 @@ def generate_translation(content):
             'Si el texto ya esta en español, entonces regresa identica y textualmente el texto sin agregar ni quitar nada más',
             'Si no se te proporciona ningun texto o un texto vacio, entonces no debes regresar nada, deja el campo vacio',
             f'texto: {content}',
-            'traducción: ',
             ""
         ]
 

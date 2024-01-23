@@ -11,7 +11,7 @@ def get_db():
         print("Error al conectar a la base de datos:", e)
         raise
 
-def translate_untranslated_items(collection_name, limit=100):
+def translate_untranslated_items(collection_name, limit=400):
     try:
         db = get_db()
         collection = db[collection_name]

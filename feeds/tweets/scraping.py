@@ -81,6 +81,7 @@ def scrape_tweets_usuario(usuario, scraper, tweets_por_usuario):
         logging.error(f"Error al raspar tweets de {usuario}: {e}")
 
 def obtener_tweets_usuarios():
+    # 78 usuarios = 390 tweets
     usuarios = ["DotCSV",
                 "TheRundownAI",
                 "krea_ai",
@@ -157,6 +158,7 @@ def obtener_tweets_usuarios():
                 "neuralink",
                 "AndrewYNg",
                 "huggingface",
+                "_akhaliq",
                 "mangelroman"]
     scraper = Nitter()
     tweets_por_usuario = {}
