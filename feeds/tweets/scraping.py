@@ -11,7 +11,7 @@ collection = db['tweets']
 
 # Función para verificar si el tweet ya existe
 def tweet_exists(tweet_link):
-    return collection.count_documents({'link': tweet_link}) > 0
+    return collection.count_documents({'link_url': tweet_link}) > 0
 
 def scrape_tweets_usuario(usuario, scraper, tweets_por_usuario):
     try:

@@ -24,11 +24,9 @@ def generate_translation(content):
                                       safety_settings=safety_settings)
 
         prompt_parts = [
-            'Por favor traduce el siguiente texto en español y toma las siguientes consideraciones, ',
-            'Si el texto ya esta en español, entonces regresa identica y textualmente el texto sin agregar ni quitar nada más',
-            'Si no se te proporciona ningun texto o un texto vacio, entonces no debes regresar nada, deja el campo vacio',
+            'Parafrasea este texto de tal forma que parezca la misma noticia pero de otra fuente',
             f'texto: {content}',
-            'traducción: ',
+            'Nueva noticia: ',
             ""
         ]
 
