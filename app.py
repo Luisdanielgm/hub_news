@@ -1,48 +1,44 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
-from datetime import datetime, timezone
-from feeds.genbeta.scraping import scrape_genbeta
-from feeds.gizmodo.scraping import scrape_gizmodo
+import time
+from feeds.genbeta.scraping import run_scraping as scrape_genbeta
+from feeds.gizmodo.scraping import run_scraping as scrape_gizmodo
+from feeds.xataka.scraping import run_scraping as scrape_xataka
+from feeds.hipertextual.scraping import run_scraping as scrape_hipertextual
 from feeds.tweets.scraping import obtener_tweets_usuarios
+from utils.traductfeeds import translate_news_and_tweets
+from utils.filtradonews import filtro_news_and_tweets
 
-app = Flask(__name__)
-CORS(app)
+# Intervalos de tiempo en segundos
+INTERVALO_SCRAPING = 15 * 60  # 15 minutos para el scraping
+INTERVALO_ESPERA_TRADUCCION = 5 * 60  # 5 minutos de espera para la traducción después del scraping
 
-def parse_date(date_str, formats):
-    for fmt in formats:
+ultimo_scraping = time.time() - INTERVALO_SCRAPING  # Inicia inmediatamente
+ultima_traduccion = time.time()
+
+while True:
+    tiempo_actual = time.time()
+
+    # Verificar si ha pasado el intervalo de scraping
+    if tiempo_actual - ultimo_scraping >= INTERVALO_SCRAPING:
         try:
-            return datetime.strptime(date_str, fmt)
-        except ValueError:
-            continue
-    raise ValueError(f"No se pudo parsear la fecha: {date_str}")
+            scrape_genbeta()
+            scrape_gizmodo()
+            scrape_xataka()
+            scrape_hipertextual()
+            obtener_tweets_usuarios()
+            # Código para guardar los resultados en la base de datos
+            ultimo_scraping = tiempo_actual
+            ultima_traduccion = tiempo_actual + INTERVALO_ESPERA_TRADUCCION  # Establece el momento para la próxima traducción
+        except Exception as e:
+            print(f"Error durante el scraping: {e}")
 
-@app.route('/', methods=['GET'])
-def get_all_news():
+    # Verificar si ha pasado el tiempo de espera para la traducción
+    if tiempo_actual >= ultima_traduccion:
+        try:
+            translate_news_and_tweets()
+            filtro_news_and_tweets()
+        except Exception as e:
+            print(f"Error durante la traducción y filtrado: {e}")
+        ultima_traduccion = tiempo_actual + INTERVALO_SCRAPING + INTERVALO_ESPERA_TRADUCCION  # Establece el próximo intervalo para la traducción
 
-    genbeta_data = scrape_genbeta()
-    gizmodo_data = scrape_gizmodo()
-    combined_data = genbeta_data + gizmodo_data
-
-    date_formats = ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%SZ']
-    combined_data.sort(key=lambda x: parse_date(x['date_origen'], date_formats), reverse=True)
-
-    return jsonify(combined_data)
-
-@app.route('/genbeta', methods=['GET'])
-def get_genbeta_news():
-    scraped_data = scrape_genbeta()
-    return jsonify({'data': scraped_data})
-
-@app.route('/gizmodo', methods=['GET'])
-def get_gizmodo_news():
-    scraped_data = scrape_gizmodo()
-    return jsonify({'data': scraped_data})
-
-@app.route('/tweets', methods=['GET'])
-def obtener_tweets():
-    tweets_por_usuario = obtener_tweets_usuarios()
-    return jsonify(tweets_por_usuario)
-
-# Ejecuta la aplicación si se ejecuta este script
-if __name__ == '__main__':
-    app.run(debug=True)
+    # Esperar un poco antes de la siguiente iteración
+    time.sleep(60)

@@ -1,34 +1,173 @@
 from ntscraper import Nitter
+import threading
+import logging
+from pymongo import MongoClient
+from utils.utils import convert_to_hours_ago
 
+# Configura la conexión a MongoDB
+client = MongoClient('mongodb+srv://luisdanielgm19:gksq4WQwlQJh5nus@cluster0.pgqscfq.mongodb.net/?retryWrites=true&w=majority')
+db = client['news_aixteam']
+collection = db['tweets']
 
-def obtener_tweets_usuarios():
-    usuarios = ["GM_LuisDaniel", "DotCSV", "huggingface", "TheRundownAI", "krea_ai", 'dhernandezlarez']
-    scraper = Nitter()
-    tweets_por_usuario = {}
+# Función para verificar si el tweet ya existe
+def tweet_exists(tweet_link):
+    return collection.count_documents({'link': tweet_link}) > 0
 
-    for usuario in usuarios:
+def scrape_tweets_usuario(usuario, scraper, tweets_por_usuario):
+    try:
         tweets_raw = scraper.get_tweets(usuario, mode='user', number=5)
         tweets_info = []
         if 'tweets' in tweets_raw:
             for tweet in tweets_raw['tweets']:
-                tweet_data = {
-                    'usuario': tweet['user']['username'],
-                    'texto': tweet['text'],
-                    'fecha': tweet['date']
-                }
-                # Añadir imagen si está disponible
-                if 'pictures' in tweet and tweet['pictures']:
-                    tweet_data['imagen'] = tweet['pictures'][0]  # La primera imagen
 
-                # Añadir GIFs si están disponibles
-                if 'gifs' in tweet and tweet['gifs']:
-                    tweet_data['gifs'] = tweet['gifs']  # Lista de GIFs
+                try:
+                    tweet_link = tweet.get('link')
 
-                # Añadir videos si están disponibles
-                if 'videos' in tweet and tweet['videos']:
-                    tweet_data['videos'] = tweet['videos']  # Lista de URLs de videos
+                    if not tweet_exists(tweet_link):
 
-                tweets_info.append(tweet_data)
+                        if tweet['date']:
+                            date_result, date_normalized = convert_to_hours_ago(tweet['date'])
+                            date_origen = tweet['date']
+
+
+                        tweet_data = {
+                            'type': 'tweet',
+                            'title': usuario,
+                            'content': tweet['text'],
+                            'date': date_result,
+                            'date_normalized': date_normalized,
+                            'date_origen': date_origen,
+                            'fuente': tweet['user']['username'],
+                            'read': 'no',
+                            'filtrada': 'no',
+                            'traducido': 'no',
+                            'spanish': '',
+
+                            'avatar': tweet['user']['avatar'],
+                            'is-retweet': tweet['is-retweet']
+                            # Añade campos adicionales como imágenes, GIFs, videos
+                        }
+
+                        if tweet.get('link'):
+                            tweet_data['link_url'] = tweet['link']
+
+                        if tweet.get('pictures'):
+                            tweet_data['img_urls'] = tweet['pictures']
+                        
+                        if tweet.get('videos'):
+                            tweet_data['videos'] = tweet['videos']
+                        
+                        if tweet.get('gifs'):
+                            tweet_data['gifs'] = tweet['gifs']
+
+                        tweets_info.append(tweet_data)
+                        # Considera insertar el tweet en la base de datos aquí
+
+                        # Insertar el tweet en la base de datos
+                        collection.insert_one(tweet_data)
+
+                        print('-- Nueva tweet agregado:')
+                        print(tweet_data)
+                        print('--------------------------')
+
+                except IndexError as e:
+                    print(f"Error de índice en tweet: {tweet}. Error: {e}")
+                except Exception as e:
+                    print(f"Error procesando tweet: {tweet}")
+                    logging.error(f"Error al raspar tweets de {usuario}: {e}")
+
         tweets_por_usuario[usuario] = tweets_info
+    except Exception as e:
+        logging.error(f"Error al raspar tweets de {usuario}: {e}")
+
+def obtener_tweets_usuarios():
+    usuarios = ["DotCSV",
+                "TheRundownAI",
+                "krea_ai",
+                "AiBreakfast",
+                "rowancheung",
+                "iia_es",
+                "theDeepView", 
+                "javilop",
+                "DeepLearningAI",
+                "Analyticsindiam",
+                "midudev",
+                "luffy_ia",
+                "Xiaomi",
+                "runwayml",
+                "emulenews",
+                "joshua_xu_",
+                "HeyGen_Official",
+                "togethercompute",
+                "kaggle",
+                "BigTechAlert",
+                "DavidSHolz",
+                "NVIDIALA",
+                "jackclarkSF",
+                "LangChainAI",
+                "xDaily",
+                "Muennighoff",
+                "WonderDynamics",
+                "seostratega",
+                "vercel",
+                "pika_labs",
+                "HyperWriteAI",
+                "El_Lobo_WS",
+                "patriciofernanf",
+                "HelloCivitai",
+                "TUPROFESORIA",
+                "Windows",
+                "PalmerLuckey",
+                "ai_for_success",
+                "Donebylaura",
+                "OpenAIDevs",
+                "playground_ai",
+                "lemonfoxai",
+                "Tesla_Optimus",
+                "sanchitgandhi99",
+                "lmsysorg",
+                "llama_index",
+                "LeiferMendez",
+                "isaacconemail",
+                "xai",
+                "OfficialLoganK",
+                "IRLab_UDC",
+                "Spain_AI_",
+                "getremixai",
+                "github",
+                "_philschmid",
+                "StabilityAI",
+                "synthesiaIO",
+                "ecomlukaskral",
+                "StanfordAILab",
+                "GoogleDeepMind",
+                "AIatMeta",
+                "GoogleAI",
+                "xavier_mitjana",
+                "copyelpadrino",
+                "serchaicom",
+                "IAViajero",
+                "CohesiveAI",
+                "NVIDIAAI",
+                "OpenAI",
+                "sama",
+                "midjourney",
+                "TheRundownTech",
+                "The_CourseAI",
+                "neuralink",
+                "AndrewYNg",
+                "huggingface",
+                "mangelroman"]
+    scraper = Nitter()
+    tweets_por_usuario = {}
+    threads = []
+
+    for usuario in usuarios:
+        thread = threading.Thread(target=scrape_tweets_usuario, args=(usuario, scraper, tweets_por_usuario))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
 
     return tweets_por_usuario

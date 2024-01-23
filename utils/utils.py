@@ -6,7 +6,7 @@ def convert_to_hours_ago(date_str):
     fecha_actual = datetime.utcnow().replace(tzinfo=timezone.utc)
 
     # Formatos a probar
-    formats = ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%SZ']
+    formats = ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%SZ', '%b %d, %Y · %I:%M %p UTC']
 
     # Intentar parsear la fecha con los formatos dados
     for fmt in formats:
@@ -49,7 +49,11 @@ def convert_to_hours_ago(date_str):
         if horas_restantes > 0:
             resultado += f" y {horas_restantes} horas"
 
-    return resultado
+    # Formato normalizado para la fecha proporcionada
+    # Este formato es comúnmente utilizado para búsquedas y ordenamiento
+    date_normalized = fecha_proporcionada.strftime('%Y-%m-%d %H:%M:%S')
+
+    return resultado, date_normalized
 
 
     

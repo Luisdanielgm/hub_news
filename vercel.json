@@ -7,10 +7,10 @@
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/app.py"
-    }
+    { "src": "/allnews", "dest": "/app.py" },
+    { "src": "/news", "dest": "/app.py" },
+    { "src": "/tweets", "dest": "/app.py" },
+    { "src": "/(.*)", "dest": "/app.py" }
   ],
   "env": {
       "FLASK_ENV": "production"
