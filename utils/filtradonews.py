@@ -17,7 +17,7 @@ def filtrar_unfiltrated_items(collection_name, limit=400):
         collection = db[collection_name]
 
         print(f"Buscando {limit} elementos no filtrados en '{collection_name}'...")
-        unfiltrated_items = collection.find({'filtrada': 'no'}).limit(limit)
+        unfiltrated_items = collection.find({'filtrada': 'nf'}).limit(limit)
 
         for item in unfiltrated_items:
             print(f"Filtrando: {item['_id']}")

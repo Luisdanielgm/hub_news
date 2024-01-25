@@ -6,10 +6,11 @@ from feeds.hipertextual.scraping import run_scraping as scrape_hipertextual
 from feeds.tweets.scraping import obtener_tweets_usuarios
 from utils.traductfeeds import translate_news_and_tweets
 from utils.filtradonews import filtro_news_and_tweets
+from utils.regenerate_news import regenerate_news_and_tweets
 
 # Intervalos de tiempo en segundos
 INTERVALO_SCRAPING = 15 * 60  # 15 minutos para el scraping
-INTERVALO_ESPERA_TRADUCCION = 5 * 60  # 5 minutos de espera para la traducción después del scraping
+INTERVALO_ESPERA_TRADUCCION = 2 * 60  # 5 minutos de espera para la traducción después del scraping
 
 ultimo_scraping = time.time() - INTERVALO_SCRAPING  # Inicia inmediatamente
 ultima_traduccion = time.time()
@@ -36,6 +37,7 @@ while True:
         try:
             translate_news_and_tweets()
             filtro_news_and_tweets()
+            regenerate_news_and_tweets()
         except Exception as e:
             print(f"Error durante la traducción y filtrado: {e}")
         ultima_traduccion = tiempo_actual + INTERVALO_SCRAPING + INTERVALO_ESPERA_TRADUCCION  # Establece el próximo intervalo para la traducción

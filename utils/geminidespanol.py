@@ -2,14 +2,14 @@ import google.generativeai as genai
 
 genai.configure(api_key="AIzaSyBqSz1l0faFq9GwGO6er8qLYxgPpYHeRwg")
 
-def generate_translation(content):
+def generate_detecta_espanol(content, title):
     try:
         # Configuración del modelo
         generation_config = {
           "temperature": 0.9,
           "top_p": 1,
           "top_k": 1,
-          "max_output_tokens": 2048,
+          "max_output_tokens": 50,
         }
 
         safety_settings = [
@@ -24,17 +24,19 @@ def generate_translation(content):
                                       safety_settings=safety_settings)
 
         prompt_parts = [
-            'Parafrasea este texto de tal forma que parezca la misma noticia pero de otra fuente',
-            f'texto: {content}',
-            'Nueva noticia: ',
+            'Que idioma es este, solo responde "español" o "ingles": '
+            f'{title}',
+            f'{content}',
             ""
         ]
 
         response = model.generate_content(prompt_parts)
+        print('Idioma español: ')
+        print(response.text)
         return response.text
 
     except Exception as e:
         # Manejar la excepción
-        print(f"Error en la generación de traducción: {e}")
+        print(f"Error en la detecctión del idioma: {e}")
         # Puedes decidir devolver un valor predeterminado o propagar la excepción
         return None

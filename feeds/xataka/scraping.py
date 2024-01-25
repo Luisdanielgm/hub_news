@@ -58,9 +58,12 @@ async def scrape_xataka():
                 'date_origen': date_origen,
                 'fuente': 'Xataka',
                 'read': 'no',
-                'filtrada': 'no',
+                'filtrada': 'nf',
                 'traducido': 'no',
-                'spanish': ''
+                'spanish': '',
+                'regenerate': 'no',
+                'newregenerate': '',
+                'imgregenerate': ''
             }
 
 

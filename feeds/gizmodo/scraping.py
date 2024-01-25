@@ -64,7 +64,7 @@ async def scrape_gizmodo():
         content = await fetch(url)
         soup = BeautifulSoup(content, 'html.parser')
 
-        articles = soup.find_all('article', class_='sc-cw4lnv-0 ksZQxB js_post_item')
+        articles = soup.find_all('article')
         scraped_data = []
 
         for article in articles:
@@ -90,9 +90,12 @@ async def scrape_gizmodo():
                 'date_origen': date_origen,
                 'fuente': 'Gizmodo',
                 'read': 'no',
-                'filtrada': 'no',
+                'filtrada': 'nf',
                 'traducido': 'no',
-                'spanish': ''
+                'spanish': '',
+                'regenerate': 'no',
+                'newregenerate': '',
+                'imgregenerate': ''
             }
 
             if not article_exists(collection, link_url):
