@@ -24,14 +24,14 @@ def filtrated_news(title, content):
                                       safety_settings=safety_settings)
 
         prompt_parts = [
-            'Tu tarea solo consiste en clasificar una noticia, tu deber es clasificar si una noticia sera util o no, estamos buscando noticias relacionadas con inteligencia artificial, pero noticias que sean nuevas funcionalidades, nueva herramienta de inteligencia artificial o algun nuevo producto, ',
+            'Tu tarea solo consiste en clasificar noticias, las noticias que clasificaras seran solo de nuevas herramientas, productos o actualizaciones de productos o herramientas de inteligencia artificial, estas noticias tambien podras reconocerlas debido a que casi siempre tendran palabras como: presentamos, nueva actualización, herramienta, ',
             'tu deber es solo ver la noticia y deberas responder unica y estrictamente estas palabras de dos letras cual sea el caso "SI" o "NO", no deberas responder ni en inglés ni "none", "nothing" ni ningun otra opción o palabras que no sea las dos opciones que te he presentado "si" o "no", ahora te presentaré algunos ejemplos: ',
-            'Noticia: Midjourney comenzará a entrenar su modelo de vídeo en enero. Resultado: si',
+            'Noticia: Nuestra primera actualización importante a V6 alfa ya está disponible. Se han mejorado todas las cualidades principales del modelo; estética, coherencia, pronta adherencia, calidad de imagen y representación de texto. Los valores más altos de --stylize también funcionan mucho mejor y la ampliación ahora es ~2 veces más rápida. ¡Disfrutar!. Resultado: si',
             'Noticia: OpenAI anuncia la llegada de la GPT Store la próxima semana. Resultado: si',
             'Noticia: Parakeet es un modelo para pasar voz a texto que supera a Whisper. Resultado: si',
-            'Noticia: Demo en Hugging Face de DreaMoving, uno de esos modelos que ponen a bailar a cualquier persona. Resultado: si',
-            'Noticia: Colab para probar MotionCtrl y generar vídeos controlando el movimiento de cámara.: si',
-            'Noticia: ¿Quieres usar tu cara en generación de imágenes con IA? En esta demo de IP-Adapter-FaceID sólo tienes que subir tu foto y a funcionar, no hace falta entrenar nada.: si',
+            'Noticia: GitHub Copilot Chat ahora está disponible de forma general para organizaciones e individuos: si',
+            'Noticia: The wait(list) is over. ✨ Pika 1.0 is officially available to everyone! ✨Create your video on command at http://pika.art.: si',
+            'Noticia: Meta just announced Fairy Fast Parallelized Instruction-Guided Video-to-Video Synthesis.: si',
             'Noticia: Presente Assistive Video, la plataforma de video generativo para crear videos a partir de texto e imágenes. Simplemente escriba lo que desea ver y observe cómo sus ideas cobran vida. Está disponible a partir de hoy en la web y a través de API.: si',
             'Noticia: La lista de espera ha terminado. ✨¡Pika 1.0 está oficialmente disponible para todos!. Resultado: si',
             'Noticia: High-Resolution and Prompt-Faithful Text-Guided Image Inpainting with Diffusion Models Resultado: si',
