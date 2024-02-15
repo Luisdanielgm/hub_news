@@ -15,7 +15,7 @@ def tweet_exists(tweet_link):
 
 def scrape_tweets_usuario(usuario, scraper, tweets_por_usuario):
     try:
-        tweets_raw = scraper.get_tweets(usuario, mode='user', number=5)
+        tweets_raw = scraper.get_tweets(usuario, mode='user', number=15)
         tweets_info = []
         if 'tweets' in tweets_raw:
             for tweet in tweets_raw['tweets']:
@@ -47,7 +47,9 @@ def scrape_tweets_usuario(usuario, scraper, tweets_por_usuario):
                             'imgregenerate': '',
 
                             'avatar': tweet['user']['avatar'],
-                            'is-retweet': tweet['is-retweet']
+                            'is-retweet': tweet['is-retweet'],
+                            "categories": "nc",
+                            "thread": "no"
                             # Añade campos adicionales como imágenes, GIFs, videos
                         }
 
@@ -103,11 +105,17 @@ def obtener_tweets_usuarios():
                 "joshua_xu_",
                 "HeyGen_Official",
                 "togethercompute",
+                "Neuro_Flash",
                 "kaggle",
                 "BigTechAlert",
                 "DavidSHolz",
+                "WriteSonic",
                 "NVIDIALA",
+                "Grammarly",
                 "jackclarkSF",
+                "Junia_ai",
+                "ChatGPTapp",
+                "heyaiwordsmith",
                 "LangChainAI",
                 "xDaily",
                 "Muennighoff",
@@ -149,14 +157,19 @@ def obtener_tweets_usuarios():
                 "GoogleAI",
                 "googlechrome",
                 "Google",
+                "LumaLabsAI",
+                "barbbowman",
+                "nutlope",
                 "xavier_mitjana",
                 "copyelpadrino",
                 "serchaicom",
                 "IAViajero",
                 "CohesiveAI",
+                "SoyTioDaniel",
                 "NVIDIAAI",
                 "OpenAI",
                 "sama",
+                "qdrant_engine",
                 "midjourney",
                 "TheRundownTech",
                 "The_CourseAI",
@@ -164,6 +177,8 @@ def obtener_tweets_usuarios():
                 "AndrewYNg",
                 "huggingface",
                 "_akhaliq",
+                "Medivis_AR",
+                "LeonardoAi_",
                 "mangelroman"]
     scraper = Nitter()
     tweets_por_usuario = {}

@@ -10,7 +10,7 @@ from utils.regenerate_news import regenerate_news_and_tweets
 
 # Intervalos de tiempo en segundos
 INTERVALO_SCRAPING = 15 * 60  # 15 minutos para el scraping
-INTERVALO_ESPERA_TRADUCCION = 2 * 60  # 5 minutos de espera para la traducción después del scraping
+INTERVALO_ESPERA_TRADUCCION = 5 * 60  # 5 minutos de espera para la traducción después del scraping
 
 ultimo_scraping = time.time() - INTERVALO_SCRAPING  # Inicia inmediatamente
 ultima_traduccion = time.time()

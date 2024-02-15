@@ -63,7 +63,8 @@ async def scrape_genbeta():
                 'spanish': '',
                 'regenerate': 'no',
                 'newregenerate': '',
-                'imgregenerate': ''
+                'imgregenerate': '',
+                "categories": "nc"
             }
 
 

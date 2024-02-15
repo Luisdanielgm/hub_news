@@ -1,6 +1,9 @@
 import google.generativeai as genai
+import os
+import dotenv
+dotenv.load_dotenv()
 
-genai.configure(api_key="AIzaSyBqSz1l0faFq9GwGO6er8qLYxgPpYHeRwg")
+genai.configure(api_key= os.getenv('API_GEMINI'))
 
 def filtrated_news(title, content):
     try:

@@ -95,7 +95,8 @@ async def scrape_gizmodo():
                 'spanish': '',
                 'regenerate': 'no',
                 'newregenerate': '',
-                'imgregenerate': ''
+                'imgregenerate': '',
+                "categories": "nc"
             }
 
             if not article_exists(collection, link_url):

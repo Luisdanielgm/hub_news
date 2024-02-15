@@ -64,7 +64,8 @@ async def scrape_hipertextual():
                 'spanish': '',
                 'regenerate': 'no',
                 'newregenerate': '',
-                'imgregenerate': ''
+                'imgregenerate': '',
+                "categories": "nc"
             }
 
 

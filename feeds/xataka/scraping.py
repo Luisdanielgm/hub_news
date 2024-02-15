@@ -63,7 +63,8 @@ async def scrape_xataka():
                 'spanish': '',
                 'regenerate': 'no',
                 'newregenerate': '',
-                'imgregenerate': ''
+                'imgregenerate': '',
+                "categories": "nc"
             }
 
 
