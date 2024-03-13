@@ -3,9 +3,11 @@ from feeds.genbeta.scraping import run_scraping as scrape_genbeta
 from feeds.gizmodo.scraping import run_scraping as scrape_gizmodo
 from feeds.xataka.scraping import run_scraping as scrape_xataka
 from feeds.hipertextual.scraping import run_scraping as scrape_hipertextual
-from feeds.tweets.scraping import obtener_tweets_usuarios
+from obtenertweetsapp import obtener_tweets_usuarios
+
 from utils.traductfeeds import translate_news_and_tweets
 from utils.filtradonews import filtro_news_and_tweets
+from utils.categorynews import categorized_news_and_tweets
 from utils.regenerate_news import regenerate_news_and_tweets
 
 # Intervalos de tiempo en segundos
@@ -25,7 +27,7 @@ while True:
             scrape_gizmodo()
             scrape_xataka()
             scrape_hipertextual()
-            obtener_tweets_usuarios()
+            #obtener_tweets_usuarios()
             # Código para guardar los resultados en la base de datos
             ultimo_scraping = tiempo_actual
             ultima_traduccion = tiempo_actual + INTERVALO_ESPERA_TRADUCCION  # Establece el momento para la próxima traducción
@@ -37,6 +39,7 @@ while True:
         try:
             translate_news_and_tweets()
             filtro_news_and_tweets()
+            categorized_news_and_tweets()
             regenerate_news_and_tweets()
         except Exception as e:
             print(f"Error durante la traducción y filtrado: {e}")

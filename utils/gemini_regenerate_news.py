@@ -22,9 +22,7 @@ def regenerate_news(titulo, content):
           {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
         ]
 
-        model = genai.GenerativeModel(model_name="gemini-pro",
-                                      generation_config=generation_config,
-                                      safety_settings=safety_settings)
+        model = genai.GenerativeModel(model_name="gemini-pro")
 
         prompt_parts = [
             'Te proporcionaré una o varias noticias e informaciones, y tu misión será reformar o reestructurar estas noticias. Para lograrlo de manera efectiva y precisa, sigue las siguientes instrucciones paso a paso:',

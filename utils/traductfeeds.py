@@ -34,9 +34,14 @@ def translate_untranslated_items(collection_name, limit=400):
                     translated_title = item['title']
                     es_traducido = 'na'
                 else:
-                    translated_content = generate_translation(item['content'])
-                    translated_title = generate_translation(item['title'])
-                    es_traducido = 'si'
+                    if language_result.lower() == 'ingles':
+                        translated_content = generate_translation(item['content'])
+                        translated_title = generate_translation(item['title'])
+                        es_traducido = 'si'
+                    else:
+                        translated_content = ''
+                        translated_title = ''
+                        es_traducido = 'no'
 
                 # Imprimir contenido original y traducido
                 print(f"Contenido original: {item['content']}")

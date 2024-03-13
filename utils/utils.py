@@ -6,7 +6,7 @@ def convert_to_hours_ago(date_str):
     fecha_actual = datetime.utcnow().replace(tzinfo=timezone.utc)
 
     # Formatos a probar
-    formats = ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%SZ', '%b %d, %Y · %I:%M %p UTC']
+    formats = ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%SZ', '%b %d, %Y · %I:%M %p UTC', '%Y-%m-%dT%H:%M:%S', '%Y-%m-%dT%H:%M:%S.%fZ']
 
     # Intentar parsear la fecha con los formatos dados
     for fmt in formats:

@@ -22,9 +22,7 @@ def filtrated_news(title, content):
           {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
         ]
 
-        model = genai.GenerativeModel(model_name="gemini-pro",
-                                      generation_config=generation_config,
-                                      safety_settings=safety_settings)
+        model = genai.GenerativeModel(model_name="gemini-pro")
 
         prompt_parts = [
             'Tu tarea solo consiste en clasificar noticias, las noticias que clasificaras seran solo de nuevas herramientas, productos o actualizaciones de productos o herramientas de inteligencia artificial, estas noticias tambien podras reconocerlas debido a que casi siempre tendran palabras como: presentamos, nueva actualización, herramienta, ',

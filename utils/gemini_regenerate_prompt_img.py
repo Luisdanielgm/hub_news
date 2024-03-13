@@ -22,9 +22,7 @@ def regenerate_prompt_img(titulo, content):
           {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
         ]
 
-        model = genai.GenerativeModel(model_name="gemini-pro",
-                                      generation_config=generation_config,
-                                      safety_settings=safety_settings)
+        model = genai.GenerativeModel(model_name="gemini-pro")
 
         prompt_parts = [
             'Genera un prompt para generar una imagen que visualice de manera vívida y atractiva la esencia de una noticia reestructurada.',

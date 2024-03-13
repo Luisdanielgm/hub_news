@@ -3,6 +3,7 @@ import threading
 import logging
 from pymongo import MongoClient
 from utils.utils import convert_to_hours_ago
+import pprint
 
 # Configura la conexión a MongoDB
 client = MongoClient('mongodb+srv://luisdanielgm19:gksq4WQwlQJh5nus@cluster0.pgqscfq.mongodb.net/?retryWrites=true&w=majority')
@@ -19,7 +20,7 @@ def scrape_tweets_usuario(usuario, scraper, tweets_por_usuario):
         tweets_info = []
         if 'tweets' in tweets_raw:
             for tweet in tweets_raw['tweets']:
-
+                #pprint.pprint(tweet)
                 try:
                     tweet_link = tweet.get('link')
 
@@ -179,7 +180,13 @@ def obtener_tweets_usuarios():
                 "_akhaliq",
                 "Medivis_AR",
                 "LeonardoAi_",
-                "mangelroman"]
+                "sourab_m",
+                "MistralAI",
+                "RekaAILabs",
+                "Auto_GPT",
+                "bebeAGI_",
+                "PhotoGarrido",
+                "mangelroman",]
     scraper = Nitter()
     tweets_por_usuario = {}
     threads = []
