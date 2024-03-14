@@ -27,7 +27,7 @@ while True:
             scrape_gizmodo()
             scrape_xataka()
             scrape_hipertextual()
-            #obtener_tweets_usuarios()
+            obtener_tweets_usuarios()
             # Código para guardar los resultados en la base de datos
             ultimo_scraping = tiempo_actual
             ultima_traduccion = tiempo_actual + INTERVALO_ESPERA_TRADUCCION  # Establece el momento para la próxima traducción
