@@ -1,0 +1,631 @@
+<div id="content-blocks">
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:center;"><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy50aGVydW5kb3duLmFpL3N1YnNjcmliZSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.54dozaeSXU_WtCduFjtr_Nwh7fQyhpjVXMMzZ-CUcr0" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Sign Up</a></b><span style="color:rgb(34, 34, 34);font-family:Helvetica, Arial, sans-serif;font-size:16px;"> | </span><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3RoZXJ1bmRvd25haS50eXBlZm9ybS5jb20vdG8va3JhWjFUU08_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.kibtJ3mbn5E3yF--d_Hhy77zYEjzFv1ew_OROSgBs9E" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Advertise</a></b> | <a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2pvYnMudGhlcnVuZG93bi5haS8_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.eo24vgnFGKdhUa02OAmkcH_bvSuNv2cj8r9CcLtoIz8" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Jobs</a> | <b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N1cGVydG9vbHMudGhlcnVuZG93bi5haS8_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.R0qAtBNn9ffaPIs73XRuw5LgCzx89Ils29tqggms3rE" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Tools</a></b></p>
+	</div>
+	<div style="background-color:#000000;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-left:15px;padding-right:15px;padding-top:0px;">
+			<a href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL29jdG8uYWkvcHJvZHVjdC90ZXh0LWdlbmVyYXRpb24vP3V0bV9zb3VyY2U9cnVuZG93biZ1dG1fbWVkaXVtPW5ld3NsZXR0ZXImdXRtX2NhbXBhaWduPWpzb24tbW9kZSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.WGVti3moPlR8YSzoyzJXYeZFVLbvVGrCz9qDEEj92Qg" rel="nofollow noopener noreferrer" style="text-decoration: none;" target="_blank"><img alt="" style="margin:0 auto 0 auto;width:100%;" src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/875438a0-ac8d-4249-b9fd-3f39fca09e67/octoai.jpg?t=1710786441"></a>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:4px;padding-top:16px;">
+			<h3 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:center;"><span style="">Welcome, AI enthusiasts.</span></h3></div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:center;"><span style="">As the arms race intensifies, two unlikely allies may be joining forces to bring advanced AI capabilities to the masses. </span><br><br><span style="">Apple and Google are reportedly in talks to integrate Gemini into the iPhone — a move that could reshape the smartphone industry as we know it. Let’s investigate…</span></p>
+		</div>
+		<div style="padding: 10px 0;">
+			<div style="margin: 0 auto; border-top: 2px Solid #494949; width:100%;"></div>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>In today’s AI rundown:</b></span></p>
+		</div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style=""><b>Apple and Google in talks on iPhone AI integration</b></span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style=""><b>Sam Altman speaks on the future of AI</b></span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style=""><b>Edit specific parts of images in seconds</b></span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style=""><b>Nvidia debuts ‘world’s most powerful chip’</b></span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style=""><b>5 new AI tools &amp; 4 new AI jobs</b></span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style=""><b>More AI &amp; tech news</b></span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><i>Read time: 4 minutes</i></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#000000;border-color:#000000;border-radius:0px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:center;"><span style="color:#FFFFFF;"><b>LATEST DEVELOPMENTS</b></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">APPLE</span></h6></div>
+		<div style="padding-bottom:4px;padding-top:0px;">
+			<h4 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;">👀<span style="">&nbsp;</span><span style=""><span style="text-decoration:underline;"><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5ibG9vbWJlcmcuY29tL25ld3MvYXJ0aWNsZXMvMjAyNC0wMy0xOC9hcHBsZS1pbi10YWxrcy10by1saWNlbnNlLWdvb2dsZS1nZW1pbmktZm9yLWlwaG9uZS1pb3MtMTgtZ2VuZXJhdGl2ZS1haS10b29scz91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.gbuoBlKWiyK7Z6imUzJOEUsrBfj-Q_HyhKO1ldY24iI" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Apple and Google in talks on iPhone AI integration</a></b></span></span></h4></div>
+		<div style="padding-bottom:0px;padding-left:15px;padding-right:15px;padding-top:0px;"><img alt="" style="margin:0 auto 0 auto;width:100%;border-radius:0px 0px 0px 0px;border-style:solid;border-width:0px 0px 0px 0px;box-sizing:border-box;border-color:#E5E7EB;" src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/fc5b12bb-c2ea-43b5-8e2b-30b11eab2a7d/handshake.jpg?t=1710789288">
+			<div style="margin:0 auto 0 auto;padding-left:0px;padding-right:0px;padding-top:2px;text-align:left;width:100%;"><small style="color:#222222;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:12px;font-style:italic;text-decoration-color:#222222;text-decoration:none;"><p><span style="">Image source: DALLE-3</span></p></small></div>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The Rundown: </b></span><span style="">Apple is reportedly in talks with Google to </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5ibG9vbWJlcmcuY29tL25ld3MvYXJ0aWNsZXMvMjAyNC0wMy0xOC9hcHBsZS1pbi10YWxrcy10by1saWNlbnNlLWdvb2dsZS1nZW1pbmktZm9yLWlwaG9uZS1pb3MtMTgtZ2VuZXJhdGl2ZS1haS10b29scz91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.gbuoBlKWiyK7Z6imUzJOEUsrBfj-Q_HyhKO1ldY24iI" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">integrate</a></span><span style=""> its Gemini AI model into the iPhone — potentially rolling out advanced AI capabilities to billions of users as soon as iOS 18 later this year.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The details:</b></span></p>
+		</div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Gemini would enable new AI-powered functions for creating images, writing text, and more, complementing Apple's on-device AI enhancements.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Apple also held previous discussions with OpenAI about using its models, with OpenAI now also reportedly </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5rb3JlYWRhaWx5dXMuY29tL29wZW5haS10by1ob3BlZnVsbHktcGFydG5lci13aXRoLXNhbXN1bmctYW5kLXNrLWNlby1zYW0tYWx0bWFuLXNheXMvP3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.4qJiwDzGDBm8_ZckeWKhfmbRlMovvwVyYx8_IZJOaeA" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">in talks</a></span><span style=""> with Samsung.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Tim Cook has promised major AI announcements at WWDC in June, though a potential Google deal may not be finalized by then.</span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Why it matters:</b></span><span style=""> Despite pushing forward with their own AI tech, Apple integrating Gemini would be a massive power play — though OpenAI siding with Samsung would be an equally compelling counter. However it shakes out, powerful AI-integrated phones are arriving VERY soon.</span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">TOGETHER WITH OCTOAI</span></h6></div>
+		<div style="padding-bottom:4px;padding-top:0px;">
+			<h4 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;">💨<span style="">&nbsp;</span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL29jdG8uYWkvcHJvZHVjdC90ZXh0LWdlbmVyYXRpb24vP3V0bV9zb3VyY2U9cnVuZG93biZ1dG1fbWVkaXVtPW5ld3NsZXR0ZXImdXRtX2NhbXBhaWduPWpzb24tbW9kZSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.WGVti3moPlR8YSzoyzJXYeZFVLbvVGrCz9qDEEj92Qg" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;"><span style="text-decoration:underline;"><b>Deliver fast, high-quality JSON responses</b></span></a></span></h4></div>
+		<div style="padding-bottom:0px;padding-left:15px;padding-right:15px;padding-top:0px;">
+			<a href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL29jdG8uYWkvcHJvZHVjdC90ZXh0LWdlbmVyYXRpb24vP3V0bV9zb3VyY2U9cnVuZG93biZ1dG1fbWVkaXVtPW5ld3NsZXR0ZXImdXRtX2NhbXBhaWduPWpzb24tbW9kZSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.WGVti3moPlR8YSzoyzJXYeZFVLbvVGrCz9qDEEj92Qg" rel="nofollow noopener noreferrer" style="text-decoration: none;" target="_blank"><img alt="" style="margin:0 auto 0 auto;width:100%;" src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/76b87659-a129-442b-8e3e-41a0a9353e53/JSonblogsocialshare__1_.png?t=1710791566"></a>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The Rundown:</b></span><span style=""> OctoAI's new JSON Mode lets builders create AI-powered applications that generate valid outputs from LLMs — ensuring fast, affordable responses without compromising quality.</span></p>
+		</div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Low-latency structured output that maintains model quality</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Flexibility to evaluate and deploy the latest LLMs</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Optimized model serving in the cloud, on dedicated deployments, or in a private environment</span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL29jdG8uYWkvcHJvZHVjdC90ZXh0LWdlbmVyYXRpb24vP3V0bV9zb3VyY2U9cnVuZG93biZ1dG1fbWVkaXVtPW5ld3NsZXR0ZXImdXRtX2NhbXBhaWduPWpzb24tbW9kZSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.WGVti3moPlR8YSzoyzJXYeZFVLbvVGrCz9qDEEj92Qg" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;"><b>Get started with OctoAI</b></a></span><span style=""> and receive $10 in free tokens when you sign up.</span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">OPENAI</span></h6></div>
+		<div style="padding-bottom:4px;padding-top:0px;">
+			<h4 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;"><span style="">🎙️</span><span style=""><span style="text-decoration:underline;"><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PWp2cUZBaTd2a0JjJmFiX2NoYW5uZWw9TGV4RnJpZG1hbiZ1dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.DJY35ZqRQ4ZwGWpMiBKV0w78SGg9aBhTMowtTwBUk70" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Sam Altman speaks on the future of AI</a></span></span></h4></div>
+		<div style="padding-bottom:0px;padding-left:15px;padding-right:15px;padding-top:0px;"><img alt="" style="margin:0 auto 0 auto;width:100%;" src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/822abad9-6b98-4d0c-a80e-7e2b4a50adc2/Screenshot_2024-03-18_at_7.53.39_PM.png?t=1710816827">
+			<div style="margin:0 auto 0 auto;padding-left:0px;padding-right:0px;padding-top:2px;text-align:left;width:100%;"><small style="color:#222222;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:12px;font-style:italic;text-decoration-color:#222222;text-decoration:none;"><p><span style="">Image source: Geeky Gadgets</span></p></small></div>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The Rundown: </b></span><span style="">OpenAI CEO Sam Altman just </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PWp2cUZBaTd2a0JjJmFiX2NoYW5uZWw9TGV4RnJpZG1hbiZ1dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.DJY35ZqRQ4ZwGWpMiBKV0w78SGg9aBhTMowtTwBUk70" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">offered</a></span><span style=""> new glimpses into GPT-5, Sora, his vision for AGI, and more in a new interview on the Lex Fridman Podcast.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The details: </b></span></p>
+		</div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Altman confirmed OpenAI will release ‘an amazing new model’ this year and ‘many different things’ in the coming months.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">When asked about GPT-4, Altman said it “sucks“ and that the leap in capabilities for GPT-5 will be similar to GPT-3’s jump to GPT-4.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Altman highlighted Sora's ability to understand and generate worlds, seeing it as a step towards AI assisting the physical world via robotics.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">He also predicted that compute will be the currency of the future and possibly the most precious commodity in the world.</span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Why it matters: </b></span><span style="">It’s rare to get raw, long-form thoughts from one of the world's most important CEOs. Altman speaks like someone who knows game-changing releases are coming soon—and the last time he went on with Lex, we got GPT-4.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style="">Check out the </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PWp2cUZBaTd2a0JjJmFiX2NoYW5uZWw9TGV4RnJpZG1hbiZ1dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.DJY35ZqRQ4ZwGWpMiBKV0w78SGg9aBhTMowtTwBUk70" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">video </a></span><span style="">and </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2xleGZyaWRtYW4uY29tL3NhbS1hbHRtYW4tMi10cmFuc2NyaXB0P3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.6oU1eFbRFJvkFPtBcbChAn7A0HS7gLLOGv9MXba-OtQ" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">transcript</a></span><span style=""> for the full conversation.</span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">AI TRAINING</span></h6></div>
+		<div style="padding-bottom:4px;padding-top:0px;">
+			<h4 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;">🎨<span style="">&nbsp;</span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5rcmVhLmFpL2FwcHMvaW1hZ2UvZW5oYW5jZXI_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.OtB42pi1R8SarEPw_zE78vo9fM2Kd7QH8PaMAQ96zKY" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;"><span style="text-decoration:underline;">Edit specific parts of images in seconds</span></a></span></h4></div>
+		<div style="padding-bottom:0px;padding-left:15px;padding-right:15px;padding-top:0px;"><img alt="" style="margin:0 auto 0 auto;width:100%;" src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/eb365e3a-d687-4f6a-92fb-2a0e337e54b6/Untitled__25_.png?t=1710793426"></div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The Rundown:</b></span><span style=""> In this tutorial, you will learn how to easily add, remove, or change specific parts of your images for free using AI.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Step-by-step:</b></span></p>
+		</div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ol start="1" style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:decimal;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Visit the </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5rcmVhLmFpL2FwcHMvaW1hZ2UvZW5oYW5jZXI_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.OtB42pi1R8SarEPw_zE78vo9fM2Kd7QH8PaMAQ96zKY" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Patch Enhance Tool</a></span><span style=""> by Krea AI. It’s free.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Upload any picture that you want to modify and click on “Enhance”.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Right-click an already enhanced image and select “Patch Enhance Tool”</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Draw the specific region of your image that you want to modify.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Enter a prompt describing what you want to do with that region and click “Patch Enhance” to get your updated image </span>🎉 </p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">PRESENTED BY BRILLIANT</span></h6></div>
+		<div style="padding-bottom:4px;padding-top:0px;">
+			<h4 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;"><span style="">🔒 </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2JyaWxsaWFudC5vcmcvVGhlUnVuZG93bkFJLz91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.I5taaTCFAaDn9wHwk6nAQA7rFUSy-5lvBED0-Kb9-rs" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;"><span style="text-decoration:underline;">Unlock your AI potential in minutes a day</span></a></span></h4></div>
+		<div style="padding-bottom:0px;padding-left:15px;padding-right:15px;padding-top:0px;">
+			<a href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2JyaWxsaWFudC5vcmcvVGhlUnVuZG93bkFJLz91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.I5taaTCFAaDn9wHwk6nAQA7rFUSy-5lvBED0-Kb9-rs" rel="nofollow noopener noreferrer" style="text-decoration: none;" target="_blank"><img alt="" style="margin:0 auto 0 auto;width:100%;" src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/cb39b3a8-3517-4cd0-a123-e397bc0a6350/Device_Color_Home-6.png?t=1710786640"></a>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The Rundown:</b></span><span style=""> Ready to master AI fundamentals fast? With Brilliant’s interactive, expert-designed courses, staying ahead of the curve has never been easier.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Brilliant offers:</b></span></p>
+		</div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Bite-sized lessons that build your AI skills from the ground up</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Personalized features that keep you motivated and on track</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">A daily learning habit that fits any schedule</span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style="">Join 10M+ people around the world and </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2JyaWxsaWFudC5vcmcvVGhlUnVuZG93bkFJLz91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.I5taaTCFAaDn9wHwk6nAQA7rFUSy-5lvBED0-Kb9-rs" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;"><b>start your 30-day free trial</b></a></span><span style="">. Plus, get 20% off a premium annual membership when you’re ready to level up.</span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">NVIDIA</span></h6></div>
+		<div style="padding-bottom:4px;padding-top:0px;">
+			<h4 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;">🚀<span style="">&nbsp;</span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL252aWRpYW5ld3MubnZpZGlhLmNvbS9uZXdzL252aWRpYS1ibGFja3dlbGwtcGxhdGZvcm0tYXJyaXZlcy10by1wb3dlci1hLW5ldy1lcmEtb2YtY29tcHV0aW5nP3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.BLdgORSI4G0dWVCmlU0r4Qmpsxcv5IspIVcNiWj1uRQ" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;"><span style="text-decoration:underline;"><b>Nvidia debuts ‘world’s most powerful chip’</b></span></a></span></h4></div>
+		<div style="padding-bottom:0px;padding-left:15px;padding-right:15px;padding-top:0px;"><img alt="" style="margin:0 auto 0 auto;width:100%;border-radius:0px 0px 0px 0px;border-style:solid;border-width:0px 0px 0px 0px;box-sizing:border-box;border-color:#E5E7EB;" src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/92cb8bb1-f251-4a8d-ad8a-2db686d13713/blackwell.jpg?t=1710797935">
+			<div style="margin:0 auto 0 auto;padding-left:0px;padding-right:0px;padding-top:2px;text-align:left;width:100%;"><small style="color:#222222;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:12px;font-style:italic;text-decoration-color:#222222;text-decoration:none;"><p><span style="">Image source: Nvidia</span></p></small></div>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The Rundown: </b></span><span style="">Jensen Huang just </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL252aWRpYW5ld3MubnZpZGlhLmNvbS9uZXdzL252aWRpYS1ibGFja3dlbGwtcGxhdGZvcm0tYXJyaXZlcy10by1wb3dlci1hLW5ldy1lcmEtb2YtY29tcHV0aW5nP3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.BLdgORSI4G0dWVCmlU0r4Qmpsxcv5IspIVcNiWj1uRQ" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">unveiled</a></span><span style=""> Nvidia’s next-gen Blackwell GPU architecture and the GB200 Superchip, delivering massive performance and efficiency gains to power the future of AI and computing.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The details: </b></span></p>
+		</div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">The Blackwell B200 GPU packs 208 billion transistors and is billed as the "world's most powerful chip".</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">The Superchip delivers 30x the performance of its H100 GPU predecessor while using 25x less energy.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Nvidia said the Blackwell innovations will allow for training for up to 10T parameter models.</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">Huang also </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3guY29tL0RySmltRmFuL3N0YXR1cy8xNzY5ODI5NzU4NDc5ODc2MTMwP3M9MjAmdXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.RLGNcL5T4TUjryj3mqiiTf4IDRYe9MVDv1ZaHlrQkAw" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">revealed</a></span><span style=""> that GPT-4 contains 1.8T parameters and that 2000 Blackwell chips could finish training the model in 90 days. </span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Why it matters: </b></span><span style="">Blackwell represents a seemingly generational leap in power, cementing Nvidia’s lead in accelerated computing and AI. With widespread industry adoption already lining up, these chips are poised to be the engine driving the next wave.</span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#000000;border-color:#000000;border-radius:0px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:center;"><span style="color:#FFFFFF;"><b>NEW TOOLS &amp; JOBS</b></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:4px;padding-top:16px;">
+			<h3 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;"><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N1cGVydG9vbHMudGhlcnVuZG93bi5haS8_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.R0qAtBNn9ffaPIs73XRuw5LgCzx89Ils29tqggms3rE" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Trending AI Tools</a></b></span></h3></div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"> 🔎<span style=""><b>&nbsp;</b></span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL29zdW0uY29tP3V0bV9zb3VyY2U9cnVuZG93biIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.i1njNgTQywhfxrkrVk9Fm7gP-SDsOxyO2Q4VqYbjVoM" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Osum</a></b></span><span style="">- Perform deep market research in seconds. Try free (Use checkout code </span><span style=""><b>RUNDOWN</b></span><span style=""> for lifetime 25% off)*</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"> 📊<span style="">&nbsp;</span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N1cGVydG9vbHMudGhlcnVuZG93bi5haS9jb250ZW50L2RpdmVkZWNrP3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.7glEhPPn5Fs-E1bZ4dNpxfNjH_AOSKXVu4yoFhJC8HE" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">DiveDeck</a></b></span><span style="">- AI-assisted content deck builder</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"> 🤖<span style="">&nbsp;</span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N1cGVydG9vbHMudGhlcnVuZG93bi5haS9jb250ZW50L2J5dGVib3Q_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.2efLiumCYBHqohvYk3cm6kcC-sBsxWmQEOoyZkkkofE" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Bytebot</a></b></span><span style="">- Browser automation via an AI-enabled SDK</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"> 📝<span style="">&nbsp;</span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N1cGVydG9vbHMudGhlcnVuZG93bi5haS9jb250ZW50L3d1ZHBlY2tlcj91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.hDW0PVZd188z1UbpHZIbrKF4zkjyNNs3Xswu0F5_xtg" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Wudpecker</a></b></span><span style=""> - Personalized AI notes for your meetings</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"> 🍿<span style="">&nbsp;</span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N1cGVydG9vbHMudGhlcnVuZG93bi5haS9jb250ZW50L2dhdW50bGV0LW1vdmllcy1ncHQ_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.-BfBGasQJEX-q3Hb3Op_UaTc_vD1Mg2ABPxKQRPecAE" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Gauntlet Movies GPT</a></b></span><span style="">- Test your knowledge of movies with this ChatGPT GPT</span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N1cGVydG9vbHMudGhlcnVuZG93bi5haS8_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.R0qAtBNn9ffaPIs73XRuw5LgCzx89Ils29tqggms3rE" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Browse more AI tools →</a></span></p>
+		</div>
+		<div style="padding-bottom:4px;padding-top:16px;">
+			<h3 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;"><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2pvYnMudGhlcnVuZG93bi5haS8_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.eo24vgnFGKdhUa02OAmkcH_bvSuNv2cj8r9CcLtoIz8" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">New AI Job Opportunities</a></b></span></h3></div>
+		<div style="padding-bottom:6px;padding-left:25px;padding-right:25px;padding-top:0px;">
+			<ul style="color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:disc;margin:0px 0px 0px 25px;padding:0;">
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">💰 </span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2pvYnMudGhlcnVuZG93bi5haS9qb2JzLzUyNDk1MTk3LXZwLW9mLWZpbmFuY2U_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.SE8vToeDRh3yD6dnWqmZszj8WHtqkoj9mAMA1HOgXcQ" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Rad AI</a></b></span><span style=""> - VP of Finance</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">🏛️ </span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2pvYnMudGhlcnVuZG93bi5haS9qb2JzLzUyMTA2Mjg1LW1hbmFnZXItdS1zLWdvdmVybm1lbnQtYWZmYWlycz91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.UTAYYWo5Y3nteoy0XZzHY8skuZWB38fjNZlLYltKucA" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Cohere</a></b></span><span style=""> - Manager, U.S. Government Affairs</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"> 🤗<span style="">&nbsp;</span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2pvYnMudGhlcnVuZG93bi5haS9qb2JzLzUyNTQ5MDA3LW1hY2hpbmUtbGVhcm5pbmctc29mdHdhcmUtZW5naW5lZXItaW5mcmFzdHJ1Y3R1cmUtdXMtcmVtb3RlP3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.ARrr6cWhfQ0-OIPotnoJdEE0AF9bK6a3-KZny8dCYyQ" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Hugging Face</a></b></span><span style=""> - ML &amp; Software Engineer, Infrastructure</span></p>
+				</li>
+				<li style="margin:5px 0px 0px 0px;">
+					<p style="text-align:left;"><span style="">🔒 </span><span style=""><b><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2pvYnMudGhlcnVuZG93bi5haS9qb2JzLzQwNDEyMDY3LXNvZnR3YXJlLWVuZ2luZWVyLXByaXZhY3k_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.LuhNN72Exr2-ej6UXG-hwejSBOAXm8EOrrrAWGPE1nQ" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">OpenAI</a></b></span><span style=""> - Software Engineer, Privacy</span></p>
+				</li>
+			</ul>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2pvYnMudGhlcnVuZG93bi5haS8_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.eo24vgnFGKdhUa02OAmkcH_bvSuNv2cj8r9CcLtoIz8" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Browse more AI jobs →</a></span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:right;"><span style=""><i>*Sponsored listing</i></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#000000;border-color:#000000;border-radius:0px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:center;"><span style="color:#FFFFFF;"><b>QUICK HITS</b></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Stability AI </b></span><span style="">released Stable Video 3D, a model based on Stable Video Diffusion that </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3N0YWJpbGl0eS5haS9uZXdzL2ludHJvZHVjaW5nLXN0YWJsZS12aWRlby0zZD91dG1fc291cmNlPVR3aXR0ZXImdXRtX21lZGl1bT13ZWJzaXRlJnV0bV9jYW1wYWlnbj1ibG9nIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.ox29ZvXS-nlRYqRj7uxipBPeArHnMBjy2sEjsnFzIgQ" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">creates</a></span><span style=""> high-quality and consistent 3D generations from a single image.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>OpenAI</b></span><span style=""> is </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy50aGVpbmZvcm1hdGlvbi5jb20vYXJ0aWNsZXMvcG9saXRpY2FsLXZldGVyYW4tbGVoYW5lLW5lYXJpbmctZGVhbC10by1qb2luLW9wZW5haT91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.KzZhYF4p7LQLRMnIa32NJrTh4wMn5qABp87v-MNn6eI" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">reportedly</a></span><span style=""> nearing a deal to hire former Airbnb policy chief and Clinton White House member Chris Lehane as a senior executive. </span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Microsoft </b></span><span style="">announced an AI event scheduled for May 20 ahead of Build 2024, </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy50aGV2ZXJnZS5jb20vMjAyNC8zLzE4LzI0MTA0OTgyL21pY3Jvc29mdC1haS1ldmVudC1idWlsZC0yMDI0LXNhdHlhLW5hZGVsbGE_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.AOi42_bAx8Vec6CZy0t4hDENQnga2ZB4_9jOqeweQUg" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">highlighting</a></span><span style=""> Windows and Surface AI integrations.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>Roblox</b></span><span style=""> launched Avatar Auto Setup and Texture Generator, two new AI features </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2NvcnAucm9ibG94LmNvbS8yMDI0LzAzLzE4L3JvYmxveC1pbnRyb2R1Y2VzLWFpLXBvd2VyZWQtYXZhdGFyLWFuZC10ZXh0dXJpbmctdGVjaG5vbG9naWVzLXRvLWFjY2VsZXJhdGUtM2QtY3JlYXRpb24vP3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.9qwwDzDXJJU3VK_KO0WazuRa_SijjbA5HWOiOiER_PU" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">designed</a></span><span style=""> to significantly reduce the time it takes for creators to develop avatars and 3D models on the platform.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>YouTube </b></span><span style="">announced a policy update requiring creators to </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3RlY2hjcnVuY2guY29tLzIwMjQvMDMvMTgveW91dHViZS1yZXF1aXJlcy1jcmVhdG9yc2Rpc2Nsb3NlLXJlYWxpc3RpYy1jb250ZW50LW1hZGUtYWkvP3V0bV9zb3VyY2U9d3d3LnRoZXJ1bmRvd24uYWkmdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249YXBwbGUtZ29vZ2xlLWdlbWluaS1pcGhvbmUtYWkiLCJwb3N0X2lkIjoiNDdlZTgxYjctOTI1NS00ZTViLTljZmQtZThkNTI5YWU0ZWU5IiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQyOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJ2aXNpdF90b2tlbiI6IjU4NTU5NmNhLTVlMDctNGMxNi1iMDY5LWMzOWVkMTJjYTdjMyIsImlhdCI6MTcxMDkwNzEwNiwiaXNzIjoib3JjaGlkIn0.e1XRntTNFcUfBhkgWiZLrh_Je_G8TgOAeHgBD-Kayag" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">disclose</a></span><span style=""> when realistic content is created using generative AI, with labels rolling out on videos and in descriptions.</span></p>
+		</div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style=""><b>The U.S. Dept. of Homeland Security</b></span><span style=""> announced three new pilot projects </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5heGlvcy5jb20vMjAyNC8wMy8xOC9ob21lbGFuZC1zZWN1cml0eS1kaHMtZ2VuZXJhdGl2ZS1haT91dG1fc291cmNlPXd3dy50aGVydW5kb3duLmFpJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPWFwcGxlLWdvb2dsZS1nZW1pbmktaXBob25lLWFpIiwicG9zdF9pZCI6IjQ3ZWU4MWI3LTkyNTUtNGU1Yi05Y2ZkLWU4ZDUyOWFlNGVlOSIsInB1YmxpY2F0aW9uX2lkIjoiNGQwMzM5MGQtMjQ4MS00Mjk5LWI5NDktZmZkOGIzOGI0YzM4IiwidmlzaXRfdG9rZW4iOiI1ODU1OTZjYS01ZTA3LTRjMTYtYjA2OS1jMzllZDEyY2E3YzMiLCJpYXQiOjE3MTA5MDcxMDYsImlzcyI6Im9yY2hpZCJ9.H507q5eUjjwuM7FZ4-hRDOclHijzjS_ghr3fZ0n35yw" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">expanding</a></span><span style=""> its use of AI, aiming to improve its investigative processes, immigration officer training, and hazard mitigation planning.</span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#000000;border-color:#000000;border-radius:0px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:center;"><span style="color:#FFFFFF;"><b>THAT’S A WRAP</b></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">SPONSOR US</span></h6></div>
+		<div style="padding-bottom:4px;padding-top:0px;">
+			<h4 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;"><span style=""><b>Get your product in front of over 500k+ AI enthusiasts</b></span></h4></div>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style="">Our newsletter is read by thousands of tech professionals, investors, engineers, managers, and business owners around the world. </span><span style=""><a class="link" href="https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3RoZXJ1bmRvd25haS50eXBlZm9ybS5jb20vdG8va3JhWjFUU08_dXRtX3NvdXJjZT13d3cudGhlcnVuZG93bi5haSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1hcHBsZS1nb29nbGUtZ2VtaW5pLWlwaG9uZS1haSIsInBvc3RfaWQiOiI0N2VlODFiNy05MjU1LTRlNWItOWNmZC1lOGQ1MjlhZTRlZTkiLCJwdWJsaWNhdGlvbl9pZCI6IjRkMDMzOTBkLTI0ODEtNDI5OS1iOTQ5LWZmZDhiMzhiNGMzOCIsInZpc2l0X3Rva2VuIjoiNTg1NTk2Y2EtNWUwNy00YzE2LWIwNjktYzM5ZWQxMmNhN2MzIiwiaWF0IjoxNzEwOTA3MTA2LCJpc3MiOiJvcmNoaWQifQ.kibtJ3mbn5E3yF--d_Hhy77zYEjzFv1ew_OROSgBs9E" target="_blank" rel="noopener noreferrer nofollow" style="-webkit-text-decoration:underline #6257ff;color:#6257ff;font-weight:bold;text-decoration:underline #6257ff;word-break:break-word;;">Get in touch today.</a></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+	<div style="background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;border-width:2px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+		<div style="padding-bottom:0px;padding-top:16px;">
+			<h6 style="color:#000000;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:Normal;line-height:21px;margin:0;text-align:left;"><span style="">FEEDBACK</span></h6></div>
+		<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;" width="100%">
+			<tbody>
+				<tr>
+					<td align="left" style="padding:15px 15px 12px;">
+						<h3 style="color:var(--wt-text-on-background-color);font-family:'Helvetica',Arial,sans-serif;font-size:22px;font-weight:Bold;line-height:33px;margin:0;text-align:left;">How would you rate today's newsletter?</h3>
+						<div style="color:var(--wt-text-on-background-color);font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;" class="paragraphText">Vote below to help us improve the newsletter for you.</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" style="font-size:.75rem;line-height:1rem;opacity:.75;padding:0px 15px 15px;text-align:left;">
+						<div style="padding-bottom:6px;padding-left:10px;padding-right:10px;padding-top:0px;">
+							<ul style="color:var(--wt-text-on-background-color);font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;list-style-type:none;margin-left:25px;margin:0;padding:0;">
+								<li style="color:var(--wt-text-on-background-color);font-weight:bold;text-decoration-color:#6257ff;text-decoration:underline;"><a data-skip-tracking="true" rel="noopener noreferrer nofollow" style="color:inherit;" target="_blank" href="https://www.therundown.ai/login"> ⭐️⭐️⭐️⭐️⭐️ Nailed it </a></li>
+								<li style="color:var(--wt-text-on-background-color);font-weight:bold;text-decoration-color:#6257ff;text-decoration:underline;"><a data-skip-tracking="true" rel="noopener noreferrer nofollow" style="color:inherit;" target="_blank" href="https://www.therundown.ai/login"> ⭐️⭐️⭐️ Average </a></li>
+								<li style="color:var(--wt-text-on-background-color);font-weight:bold;text-decoration-color:#6257ff;text-decoration:underline;"><a data-skip-tracking="true" rel="noopener noreferrer nofollow" style="color:inherit;" target="_blank" href="https://www.therundown.ai/login"> ⭐️ Epic Fail </a></li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" style="font-size:.75rem;line-height:1rem;opacity:.75;padding:0px 15px 15px;text-align:left;">
+						<p style="color:inherit;" class="text-wt-text-on-background"><span><a data-skip-tracking="true" href="https://www.therundown.ai/login"><span style="text-decoration: underline;">Login</span></a>
+							</span> or <span><a data-skip-tracking="true" href="https://www.therundown.ai/subscribe"><span style="text-decoration: underline;">Subscribe</span></a>
+							</span> to participate in polls. </p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<style>
+			p span[style*="font-size"] { line-height: 1.6; }
+			
+		</style>
+		<div style="padding-bottom:12px;padding-top:12px;">
+			<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"><span style="">If you have specific feedback or anything interesting you’d like to share, please let us know by </span><span style=""><b>replying to this email.</b></span></p>
+		</div>
+	</div>
+	<style>
+		p span[style*="font-size"] { line-height: 1.6; }
+		
+	</style>
+	<div style="padding-bottom:12px;padding-top:12px;">
+		<p style="color:#2d2d2d;color:var(--wt-text-on-background-color) !important;font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-height:24px;text-align:left;"></p>
+	</div>
+</div>

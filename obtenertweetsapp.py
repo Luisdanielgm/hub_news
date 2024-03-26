@@ -6,108 +6,131 @@ def obtener_tweets_usuarios():
     
     start_time = time.time()
 
-    #users = ['DotCSV', 'IAViajero', 'Copyelpadrino']
-    users = ["DotCSV",
+    list_users_not_processed = []
+
+    usertwitter1 = '@aiteamdigital'
+    passwordtwitter1 = 'Aiteam321.'
+    usertwitter2 = '@AIPedia_tools'
+    passwordtwitter2 = 'taipedia2023.'
+
+    users1 = [
+                "DotCSV",
                 "TheRundownAI",
-                "krea_ai",
                 "AiBreakfast",
+                "_akhaliq",
                 "rowancheung",
                 "iia_es",
                 "theDeepView", 
+                "runwayml",
+                "huggingface",
                 "javilop",
                 "DeepLearningAI",
                 "Analyticsindiam",
-                "midudev",
-                "luffy_ia",
-                "Xiaomi",
-                "runwayml",
+                "krea_ai",
+                "xDaily",
+                "togethercompute",
                 "emulenews",
                 "joshua_xu_",
-                "HeyGen_Official",
-                "togethercompute",
-                "Neuro_Flash",
-                "kaggle",
-                "BigTechAlert",
-                "DavidSHolz",
-                "WriteSonic",
-                "NVIDIALA",
-                "Grammarly",
-                "jackclarkSF",
-                "Junia_ai",
-                "ChatGPTapp",
-                "heyaiwordsmith",
+                "OpenAIDevs",
                 "LangChainAI",
-                "xDaily",
-                "Muennighoff",
-                "WonderDynamics",
+                "HeyGen_Official",
+                "DavidSHolz",
+                "NVIDIALA",
+                "jackclarkSF",
+                "isaacconemail",
+                ]
+
+    users2 = [
+                "ai_for_success",
+                "lmsysorg",
+                "PalmerLuckey",
                 "seostratega",
+                "nutlope",
+                "GoogleDeepMind",
                 "vercel",
                 "pika_labs",
-                "HyperWriteAI",
-                "El_Lobo_WS",
-                "patriciofernanf",
-                "HelloCivitai",
-                "TUPROFESORIA",
-                "Windows",
-                "PalmerLuckey",
-                "ai_for_success",
-                "Donebylaura",
-                "OpenAIDevs",
-                "playground_ai",
-                "Tesla_Optimus",
-                "sanchitgandhi99",
-                "lmsysorg",
                 "llama_index",
-                "LeiferMendez",
-                "isaacconemail",
+                "_philschmid",
+                "PhotoGarrido",
+                "Muennighoff",
+                "WonderDynamics",
+                "midudev",
+                "playground_ai",
+                "kaggle",
+                "Xiaomi",
+                "heyaiwordsmith",
+                "patriciofernanf",
+                "luffy_ia",
+                "WriteSonic",
+                "Neuro_Flash",
+                "TUPROFESORIA",
+                "sanchitgandhi99",
+                ]
+
+    users3 = [
+                "NVIDIAAI",
                 "xai",
                 "OfficialLoganK",
+                "GoogleAI",
+                "sama",
+                "OpenAI",
+                "github",
+                "StabilityAI",
                 "IRLab_UDC",
                 "Spain_AI_",
+                "BigTechAlert",
+                "Donebylaura",
+                "AIatMeta",
                 "getremixai",
-                "github",
-                "_philschmid",
-                "StabilityAI",
-                "synthesiaIO",
+                "Junia_ai",
+                "HyperWriteAI",
+                "xavier_mitjana",
+                "El_Lobo_WS",
+                "LeiferMendez",
+                "AndrewYNg",
                 "ecomlukaskral",
                 "StanfordAILab",
-                "GoogleDeepMind",
-                "AIatMeta",
-                "GoogleAI",
+                "Tesla_Optimus",
+                "Windows"
+                ]
+
+    users4 = [
+                "synthesiaIO",
+                "HelloCivitai",
                 "googlechrome",
+                "Grammarly",
                 "Google",
                 "LumaLabsAI",
                 "barbbowman",
-                "nutlope",
-                "xavier_mitjana",
                 "copyelpadrino",
+                "neuralink",
+                "midjourney",
+                "TheRundownTech",
                 "serchaicom",
+                "Medivis_AR",
                 "IAViajero",
                 "CohesiveAI",
                 "SoyTioDaniel",
-                "NVIDIAAI",
-                "OpenAI",
-                "sama",
                 "qdrant_engine",
-                "midjourney",
-                "TheRundownTech",
                 "The_CourseAI",
-                "neuralink",
-                "AndrewYNg",
-                "huggingface",
-                "_akhaliq",
-                "Medivis_AR",
                 "LeonardoAi_",
                 "sourab_m",
-                "MistralAI",
                 "RekaAILabs",
                 "Auto_GPT",
-                "bebeAGI_",
-                "PhotoGarrido",
-                "mangelroman"]
+                "mangelroman"
+            ]
 
 
-    obtener_tweets(users)
+    list_users_not_processed.extend(obtener_tweets(users1, usertwitter1, passwordtwitter1))
+    list_users_not_processed.extend(obtener_tweets(users2, usertwitter2, passwordtwitter2))
+    list_users_not_processed.extend(obtener_tweets(users3, usertwitter1, passwordtwitter1))
+    list_users_not_processed.extend(obtener_tweets(users4, usertwitter2, passwordtwitter2))
+
+    while len(list_users_not_processed) > 0:
+        print("Existen usuarios por procesar:", len(list_users_not_processed))
+        new_users_not_processed = obtener_tweets(list_users_not_processed, usertwitter1, passwordtwitter1)
+        list_users_not_processed.clear()  # Limpiar la lista actual
+        list_users_not_processed.extend(new_users_not_processed) 
 
     end_time = time.time()
     total_time_seconds = end_time - start_time

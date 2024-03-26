@@ -5,6 +5,32 @@ from pymongo import MongoClient
 from bson import ObjectId
 from utils.utils import convert_to_hours_ago
 import logging
+import resend
+import os
+import re
+import dotenv
+from utils.gemini_new_title_article import new_title_article
+from utils.gemini_new_article import new_article
+from utils.gemini_new_keys_words import new_keys_words
+
+dotenv.load_dotenv()
+resend.api_key = os.getenv('RESEND_API_KEY')
+
+def send_email(subject, html_content, email):
+    try:
+
+        params = {
+            "from": "AITeam <redactor@webflowsolution.lat>",
+            "to": [email],
+            "subject": f"""{subject}""",
+            "html": f"""{html_content}""",
+        }
+
+        email = resend.Emails.send(params)
+        print('Email enviado:', email)
+
+    except Exception as e:
+        logging.error(f"Error sending email: {e}")
 
 # Función auxiliar para convertir ObjectId a str
 def ObjectIdToStr(obj):
@@ -91,12 +117,14 @@ async def scrape_gizmodo():
                 'fuente': 'Gizmodo',
                 'read': 'no',
                 'filtrada': 'nf',
-                'traducido': 'no',
-                'spanish': '',
+                'traducido': 'na',
+                'spanish': contenido,
                 'regenerate': 'no',
                 'newregenerate': '',
                 'imgregenerate': '',
-                "categories": "nc"
+                "categories": "no",
+                "similar_group": "no",
+                "added_keywords": "no"
             }
 
             if not article_exists(collection, link_url):
@@ -107,6 +135,86 @@ async def scrape_gizmodo():
                 article_info['_id'] = ObjectIdToStr(inserted_article)
                 scraped_data.append(article_info)
 
+                full_link_url = article_info['link_url']
+                full_content_article = await fetch(full_link_url)
+                full_content_soup = BeautifulSoup(full_content_article, 'html.parser')
+
+                title_full = full_content_soup.find('header', class_='sc-1efpnfq-1 blDizU').find('h1', class_='sc-1efpnfq-0 MLlqx').get_text()
+                texts_full = full_content_soup.find_all('p', class_='sc-77igqf-0 fnnahv')
+
+                full_img = full_content_soup.find('main').find('figure').find('img')['src']
+
+                content_container = full_content_soup.find('div', class_='sc-r43lxo-1 cwnrYD')
+                extracted_text = ''
+
+                for element in content_container.children:
+                    
+                    if element.name == 'div':
+                        continue
+                    
+                    elif element.name == 'p':
+                        extracted_text += element.get_text() + '\n\n'
+                    
+                    elif element.name == 'ul':
+                        for li in element.find_all('li'):
+                            extracted_text += f"- {li.get_text()}\n"
+
+                    extracted_text += '\n'
+
+                extracted_text = re.sub(r'https?://\S+|www\.\S+|[^A-Za-z0-9]+', ' ', extracted_text)
+                extracted_text = extracted_text.lower()
+
+                print('Generando nuevo título...')
+                title_text = new_title_article(title_full)
+                if title_text == None:
+                    continue
+
+                # limpiar el titulo de los caracteres *
+                title_text = title_text.replace('*', '')
+
+                print('Generando nuevo articulo...')
+                extracted_text = new_article(extracted_text)
+                if extracted_text == None:
+                    continue
+
+                # extraer de extracted_text solo el contenido dentro de las etiquetas <article> y </article>
+                extracted_text = re.findall(r'<article>(.*?)</article>', extracted_text, re.DOTALL)[0]
+
+                if re.search(r'<h1>.*?</h1>', extracted_text) is None:
+                    print("No se encontraron etiquetas h1 en extracted_text.")
+                else:
+                    # Cambiamos las etiquetas h1 por h3 manteniendo el contenido
+                    extracted_text = re.sub(r'<h1>(.*?)</h1>', r'<h3>\1</h3>', extracted_text)
+
+                # extraemos el primer parrafo en etiqueta p del extracted_text
+                first_p = re.findall(r'<p>(.*?)</p>', extracted_text, re.DOTALL)[0]
+
+                print('Generando palabras claves...')
+                keyWords_text = new_keys_words(title_full, extracted_text)
+                if keyWords_text == None:
+                    continue
+
+
+                html_content = f'<!DOCTYPE html><html><body><center><article>'
+
+                html_content += f'{extracted_text}'
+                    
+                html_content += f'</article><img src="{full_img}" alt="{title_text}" />'
+
+                html_content += '</center>'
+
+                html_content += f'<p>Fuente: <a href="{full_link_url}">{full_link_url}</a></p>'
+
+                html_content += f'<p>[status pending][tags {keyWords_text}][category Tecnología][excerpt]{first_p}[/excerpt]</p>'
+
+                html_content += '</body></html>'
+
+                print('Enviando correos...')
+                send_email(title_text, html_content, 'luisdanielgm19@gmail.com')
+                send_email(title_text, html_content, 'hilo214cecu@post.wordpress.com')
+
+
+        print(f"Se han extraido {len(scraped_data)} noticias de Gizmodo.")
         return scraped_data
 
     except Exception as e:

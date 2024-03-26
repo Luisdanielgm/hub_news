@@ -12,24 +12,22 @@ def generate_translation(content):
           "temperature": 0.9,
           "top_p": 1,
           "top_k": 1,
-          "max_output_tokens": 2048,
+          "max_output_tokens": 5048,
         }
 
         safety_settings = [
-          {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-          {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-          {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-          {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+          {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+          {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+          {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+          {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
         ]
 
-        model = genai.GenerativeModel(model_name="gemini-pro")
+        model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generation_config, safety_settings=safety_settings)
 
         prompt_parts = [
-            'Por favor traduce el siguiente texto en español y toma las siguientes consideraciones, ',
-            'Si el texto ya esta en español, entonces regresa identica y textualmente el texto sin agregar ni quitar nada más',
-            'Si no se te proporciona ningun texto o un texto vacio, entonces no debes regresar nada, deja el campo vacio',
-            f'texto: {content}',
-            ""
+            'Por favor traduce el siguiente texto en español: \n',
+            f"""texto: {content} \n""",
+            'traduccion: '
         ]
 
         response = model.generate_content(prompt_parts)

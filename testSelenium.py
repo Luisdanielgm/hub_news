@@ -13,20 +13,23 @@ from utils.utils import convert_to_hours_ago
 client = MongoClient('mongodb+srv://luisdanielgm19:gksq4WQwlQJh5nus@cluster0.pgqscfq.mongodb.net/?retryWrites=true&w=majority')
 db = client['news_aixteam']
 collection = db['tweets']
+count_processed_user = 0
+list_users_not_processed = []
 
 # Función para verificar si el tweet ya existe
 def tweet_exists(tweet_link):
     return collection.count_documents({'link_url': tweet_link}) > 0
 
-def obtener_tweets(users):
+def obtener_tweets(users, usertwitter, passwordtwitter):
     driver = None
     tweets_data = []
+    list_users_not_processed = []
 
     def iniciar_sesion():
         nonlocal driver
         print(f"Iniciando sesión de @AIPedia_tools")
         username_field = driver.find_element("xpath", "//input[@name='text']")
-        username_field.send_keys("@AIPedia_tools")
+        username_field.send_keys({usertwitter})
         #username_field.send_keys("@aiteamdigital")
 
         next_button = driver.find_element("xpath", '//div[@role="button"]//span[text()="Siguiente"]')
@@ -34,12 +37,12 @@ def obtener_tweets(users):
         time.sleep(3)
 
         password_field = driver.find_element("xpath", "//input[@name='password']")
-        password_field.send_keys("taipedia2023.")
+        password_field.send_keys({passwordtwitter})
         #password_field.send_keys("Aiteam321.")
 
         login_button = driver.find_element("xpath", '//div[@role="button"]//span[text()="Iniciar sesión"]')
         login_button.click()
-        print(f"Sesión iniciada @AIPedia_tools")
+        print(f"Sesión iniciada {usertwitter}")
         guardar_cookies()
         time.sleep(3)
 
@@ -84,6 +87,7 @@ def obtener_tweets(users):
 
     def obtener_tweets_usuario(user):
         nonlocal driver
+        global count_processed_user
         user_tweets = []
         tweet_ids = set()
         tweet_count = 0
@@ -93,20 +97,16 @@ def obtener_tweets(users):
         web = f"https://twitter.com/{user}"
         print(f"Obteniendo tweets de {user}")
         driver.get(web)
-        time.sleep(5)
+        time.sleep(6)
 
         # Altura de la ventana
         window_height = driver.execute_script("return window.innerHeight;")
-        print(f"Altura de la ventana: {window_height}")
-        # Desplazamiento parcial (3/4 del tamaño de la ventana)
         scroll_height = window_height * 0.65
-        print(f"Desplazamiento parcial: {scroll_height}")
 
-        # Desplazamiento lento y guardado de tweets
         while True:
             try:
                 # Espera para cargar los elementos
-                time.sleep(0.1)
+                time.sleep(0.3)
                 tweets = esperar_elementos_presentes("//article")
 
                 # Procesar los tweets
@@ -122,17 +122,21 @@ def obtener_tweets(users):
                         print(tweet_data)
                         print('--------------------------')
                         tweet_count += 1
+
+                        if tweet_count >= 15:
+                            print(f"Se han guardado {tweet_count} tweets de {user}. Se detiene la ejecución.")
+                            print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                            count_processed_user += 1
+                            return user_tweets
                     
                     else:
                         repeated_tweet_count += 1
 
-                    # Detener si ya se han guardado 15 tweets únicos o si se repiten 5 tweets
-                    if tweet_count >= 15 or repeated_tweet_count >= max_repeated_tweets:
-                        if tweet_count >= 15:
-                            print(f"Se han guardado {tweet_count} tweets. Se detiene la ejecución.")
-                        else:
-                            print(f"Se han detectado {repeated_tweet_count} tweets repetidos. Se detiene la ejecución.")
-                        break
+                        if repeated_tweet_count >= max_repeated_tweets:
+                            print(f"Se han detectado {repeated_tweet_count} tweets repetidos de {user}. Se detiene la ejecución.")
+                            print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                            count_processed_user += 1
+                            return user_tweets
 
                 # Desplazamiento suave
                 driver.execute_script(f"window.scrollBy(0, {scroll_height});")
@@ -140,10 +144,15 @@ def obtener_tweets(users):
 
             except Exception as e:
                 print(f"Error al obtener tweets: {e}")
+                print(f"Agregando {user} a la lista de usuarios no procesados.")
+                # agregar user a list_users_not_processed
+                global list_users_not_processed
+                list_users_not_processed.append(user)
+                print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 break
 
+        print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         return user_tweets
-
 
     def get_tweet(element, user):
         try:
@@ -251,7 +260,9 @@ def obtener_tweets(users):
                 'newregenerate': '',
                 'imgregenerate': '',
                 'avatar': avatar_url,
-                "categories": "nc",
+                "categories": "no",
+                "similar_group": "no",
+                "added_keywords": "no",
                 "thread": "no",
                 'link_url': url,
                 'img_urls': photo_urls,
@@ -283,4 +294,12 @@ def obtener_tweets(users):
         user_tweets = obtener_tweets_usuario(user)
         tweets_data.extend(user_tweets)
 
+    global count_processed_user
+    count_no_processed_user = len(users) - count_processed_user
+    print(f"Total de tweets: {len(tweets_data)}")
+    print(f"De {len(users)} usuarios: {count_processed_user} procesados, {count_no_processed_user} no procesados.")
+    count_no_processed_user = 0
+    count_processed_user = 0
     driver.quit()
+
+    return list_users_not_processed

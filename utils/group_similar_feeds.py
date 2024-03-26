@@ -1,5 +1,7 @@
 from pymongo import MongoClient
-#from utils.gemini_group_similar import group_news
+from gemini_group_similar import group_news
+from datetime import datetime, timedelta, timezone
+import json
 
 def get_db():
     try:
@@ -11,67 +13,73 @@ def get_db():
         print("Error al conectar a la base de datos:", e)
         raise
 
-def start_group_similar_items(collection_name, limit=10):
+def start_group_similar_items(collection_name):
     try:
         db = get_db()
         collection = db[collection_name]
 
-        print(f"Buscando {limit} elementos no agrupados en '{collection_name}'...")
-        ungrouped_items = collection.find({'similar_group': 'no'}).limit(limit)
+        now = datetime.now()
+        last_week = now - timedelta(days=1)
+        last_week_day = last_week.strftime('%Y-%m-%d')
 
-        batch = []  # Lista para almacenar lotes de noticias a procesar
+        today_date = datetime.now().strftime("%Y_%m_%d")
+        json_name = f"group_{collection_name}_{today_date}"
 
-        for item in ungrouped_items:
-            print(f"Agregando a lote: {item['_id']}")
-            batch.append(item)
+        print(f"Buscando elementos no agrupados en '{collection_name}'...")
+        num_ungrupped_items = collection.count_documents({'date_normalized': {'$gte': last_week_day}, 'similar_group': 'no', 'filtrada': 'si'})
+        print(f"Se encontraron {num_ungrupped_items} elementos no agrupados.")
 
-        # Procesar lotes de 10 noticias
-        for i in range(0, len(batch), 10):
-            batch_to_process = batch[i:i+10]
-            processed_group = process_and_save_group(batch_to_process)
+        print(f"Buscando elementos no agrupados en '{collection_name}'...")
+        ungrouped_items = list(collection.find({'date_normalized': {'$gte': last_week_day}, 'similar_group': 'no', 'filtrada': 'si'}))
 
-            print(f"Agrupación de noticias procesadas: {processed_group}")
+        # Iterar sobre cada elemento
+        for i, item1 in enumerate(ungrouped_items):
+
+            if i < len(ungrouped_items) - 1:
+
+                print(f"Elemento {i+1}:")
+
+                # Iterar sobre los elementos posteriores al elemento actual
+                for j, item2 in enumerate(ungrouped_items[i+1:], start=i+2):
+                    print(f"Comparando {i+1} con elemento {j}:")
+                    
+                    # guardar title y content en una variable
+                    title1 = item1.get('title', '')
+                    text1 = item1.get('spanish', '')
+                    content1 = text1
+
+                    title2 = item2.get('title', '')
+                    text2 = item2.get('spanish', '')
+                    content2 = text2
+
+                    print(f"{i+1}- {content1}")
+                    print(f"{j}- {content2}")
+
+                    # Llamar a la funciãn group_news
+                    similar_news = group_news(content1, content2)
+
+                    if similar_news != None:
+                        positive_responses = ['si', 'sí', 'yes']
+                        if similar_news.lower() in positive_responses:
+                            print(f"Similar News: {similar_news}")
+                            #collection.update_one({'_id': item1['_id']}, {'$set': {'similar_group': 'si', 'similar_news': similar_news}})
+                        else:
+                            print(f"Similar News: {similar_news}")
+                            #collection.update_one({'_id': item1['_id']}, {'$set': {'similar_group': 'no'}})
+
+                print(f"--------------------------------------")
 
         print(f"Proceso de agrupación para '{collection_name}' completado.")
     except Exception as e:
         print(f"Error en start_group_similar_items para '{collection_name}': {e}")
         raise
 
-
-def process_and_save_group(batch_to_process):
-    try:
-        # Aquí procesas el lote de noticias y las agrupas
-        # Luego las guardas en la base de datos y obtienes el nuevo id de grupo
-        # Esta parte del código es un pseudo-código que debes ajustar según tu lógica real
-
-        # Supongamos que procesas y agrupas las noticias en la variable grouped_news
-        grouped_news = {'idgrupo': ['id12345678', 'id123456438', 'id1237248', 'id45545678']}
-
-        # Guardar las noticias agrupadas en la base de datos y obtener el nuevo id de grupo
-        new_group_id = save_grouped_news(grouped_news)
-
-        return new_group_id
-    except Exception as e:
-        print(f"Error al procesar y guardar grupo de noticias: {e}")
-        raise
-
-def save_grouped_news(grouped_news):
-    try:
-        # Aquí guardas las noticias agrupadas en la base de datos
-        # y devuelves el nuevo id de grupo
-        # Esta parte del código es un pseudo-código que debes ajustar según tu lógica real
-
-        # Supongamos que guardas las noticias agrupadas en la base de datos y obtienes el nuevo id de grupo
-        new_group_id = 'nuevo_id_grupo'
-
-        return new_group_id
-    except Exception as e:
-        print(f"Error al guardar grupo de noticias en la base de datos: {e}")
-        raise
-
 def group_similar_news():
     try:
-        start_group_similar_items('news')
+        start_group_similar_items('tweets')
         print("Agrupación de noticias similares completada.")
     except Exception as e:
         print("Error al agrupar noticias similares:", e)
+
+
+group_similar_news()

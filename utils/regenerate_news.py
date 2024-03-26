@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 from utils.gemini_regenerate_news import regenerate_news
 from utils.gemini_regenerate_prompt_img import regenerate_prompt_img
+from datetime import datetime, timedelta, timezone
 
 def get_db():
     try:
@@ -17,8 +18,16 @@ def regenerate_news_item(collection_name, limit=400):
         db = get_db()
         collection = db[collection_name]
 
+        now = datetime.now()
+        last_week = now - timedelta(days=7)
+        last_week_day = last_week.strftime('%Y-%m-%d') 
+
         print(f"Buscando {limit} elementos no regenerate en '{collection_name}'...")
-        news_items = collection.find({'regenerate': 'no'}).limit(limit)
+        news_items = collection.find(
+            {
+                'date_normalized': {'$gte': last_week_day},
+                'regenerate': 'no'
+            }).limit(limit)
 
         for item in news_items:
             print(f"Regenerando: {item['_id']}")
